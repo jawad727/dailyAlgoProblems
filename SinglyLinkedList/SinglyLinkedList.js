@@ -130,5 +130,30 @@ function LinkedList() {
       length--; //decrement because we just removed somthing
       return currentNode.element //return the node we just took out
     }
+
+    this.reverse = function() { // Linear Time Reversal
+
+      var prev_node = null;
+      
+      while (head != null) {
+        var next_node = head.next
+        head.next = prev_node
+        prev_node = head
+        head = next_node 
+      }
+
+    head = prev_node
+    }
   
+  }
+
+
+  function printList(llist) {
+    var currentNode = llist.head()
+    var previousNode = null
+    while(currentNode != null) {
+      previousNode = currentNode
+      currentNode = currentNode.next
+      console.log(previousNode.element)
+    }
   }

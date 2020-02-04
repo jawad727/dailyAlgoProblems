@@ -1,4 +1,4 @@
-//GOAL: GAAATAAA to GAA TTCCG
+  //GOAL: GAAATAAA to GAA TTCCG
 
 
 //iterate through each letter and compare it to its direct siblings, 
@@ -12,24 +12,33 @@ function steadyGene(gene) {
       // console.log(i)
       for (j=gene.length; j>=0; j--) {
         var pushArray = []
-        var checker = {A: 0, T: 0, C: 0, G: 0}
+        
 
         // console.log(gene.slice(i, j))
         // console.log(j)
-        console.log(gene.slice(i, j))
-        
+        // console.log(gene.slice(i, j))
+        var checker = {A: 0, T: 0, C: 0, G: 0}
+        var kRecord =  0
         for (k=0; k<gene.length; k++) {
-          var kRecord =  0
+
+          
+          // console.log(checker)
+          // console.log(gene[k])
           if (checker[gene[k]] < 2) {
-            checker[gene[k]] += 1
+            checker[gene[k]] = checker[gene[k]] + 1
             kRecord += 1
-
-            if (kRecord > record) {
-              record = kRecord
-            }
           }
+          // console.log(gene[k])
+          // console.log(checker)
+          // console.log(kRecord)
+          // console.log("//")
 
+          if (kRecord > record) {
+            record = kRecord
+          }
         }
+
+        
 
       }
     }
