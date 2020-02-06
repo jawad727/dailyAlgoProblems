@@ -144,6 +144,20 @@ function LinkedList() {
 
     head = prev_node
     }
+
+    this.isPalindrome = function() { // Checks if the singly linked list is a palindrome
+      var stack = []
+      var currentNode = head
+      while (currentNode) {
+        stack.push(currentNode.element)
+        currentNode = currentNode.next
+      }
+      var reverseStack = []
+      for (i=stack.length - 1; i>=0; i--) {
+        reverseStack.push(stack[i])
+      }
+      return stack.join("") == reverseStack.join("")
+    }
   
   }
 
